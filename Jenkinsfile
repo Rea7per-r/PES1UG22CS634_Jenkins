@@ -17,9 +17,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './output'  // This file does not exist!
-            }
+                sh './nonexistent_file' // Intentional error to trigger failure
+            }    
         }
+
 
         stage('Deploy') {
             steps {
